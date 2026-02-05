@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: red;
+  transition: background 1s linear;
+}
+
+.box:hover {
+  background: blue;
+}
