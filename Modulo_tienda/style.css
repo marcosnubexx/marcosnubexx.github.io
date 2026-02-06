@@ -1,0 +1,201 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #212429;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+.montserrat-font,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.navbar {
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem;
+  border-bottom: 1px solid black;
+  background-color: white;
+
+  .navbar__tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar__icons {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .navbar__links {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  @media (max-width: 920px) {
+    width: 100%;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    .navbar__icons,
+    .navbar__links {
+      display: none;
+    }
+
+    .navbar__tools {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.container {
+  .container__header {
+    padding: 2rem;
+  }
+
+  .container__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 300px));
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 2rem;
+    div > img {
+      border-radius: 1rem;
+    }
+    div > .card__details {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      .card__price {
+        font-weight: 600;
+      }
+    }
+  }
+  @media (max-width: 920px) {
+    .container__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    .container__cards {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      align-items: center;
+      justify-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+}
+
+.footer__container {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  height: 155px;
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: var(--secondary-color);
+  .footer__list {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+
+    .footer__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      .footer__image__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        border-radius: 2rem;
+      }
+    }
+  }
+
+  @media (max-width: 920px) {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: var(--secondary-color);
+    .footer__list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      text-decoration: none;
+      list-style: none;
+      gap: 3rem;
+      justify-content: space-between;
+      align-items: self-start;
+      color: var(--primary-color);
+
+      .footer__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem;
+        width: 100%;
+        gap: 1rem;
+        border-bottom: 1px solid var(--primary-color);
+        font-weight: bold;
+        .footer__image__container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          background-color: var(--primary-color);
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+}
