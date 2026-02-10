@@ -1,0 +1,26 @@
+<main class="container">
+  <section class="container__cards">
+    @if (this.tablero().estadoPartida !== "PartidaNoIniciada") {
+      @for (carta of this.tablero().cartas; track $index) {
+        <div
+          class="card"
+          [ngClass]="{
+            card__active: carta.estaVuelta,
+            card__flipped: carta.estaVuelta,
+          }"
+          (click)="voltearLaCarta(tablero(), $index)"
+        >
+          @if (carta.estaVuelta) {
+            <img class="card__image" [src]="[carta.imagen]" />
+          }
+        </div>
+      }
+    }
+  </section>
+  <section class="container__btn">
+    <button class="btn" (click)="iniciaPartida(tablero())">
+      Empezar Partida
+    </button>
+  </section>
+</main>
+<router-outlet />
